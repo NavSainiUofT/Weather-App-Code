@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">My name is Nav!</p>
+    <hr class="my-4">
+    <p>I am a University of Toronto student with a passion for web development. I am looking to develop my skills further and learn from peers in a professional environment</p>
+    <p class="lead">
+      <a class="btn btn-light btn-lg" role="button" (click)="onclicklearnmore()">Learn more</a>
+    </p>
+  </div>
+
+  <div *ngIf="learnmore; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      
+      
+      Here is more about me since you clicked the button :)
+    
+    
+    </ng-template>
+
+    
+    <ng-template #elseBlock>
+
+
+
+    </ng-template>

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div id="weather-main">
+                <div class="weather-row">
+                    <h1>{{WeatherData.temp_celcius}}° C</h1>
+                </div>
+
+                <div class="weather-row">
+                    {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°
+                </div>
+
+                <div class="weather-row">
+                <h2>{{WeatherData.name}}, {{this.WeatherData.sys.country}}</h2> 
+                </div>
+
+                <div class="weather-row">
+                    <p>Humidity: {{WeatherData.main.humidity}}%</p>
+                </div>
+                <div class="weather-row">
+                    <p>Sunset Time: {{WeatherData.sunset_time}} your time</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div>
+                <label id="label" for="first_name"
+                  >What is your <span></span> city?</label><br>
+                  <input class="form-control" type="text" #box (keyup)="getCity(box.value)" placeholder="enter city" name="city">
+                  <br>
+                  <button class="btn btn-dark" (click)="find_weather()">Find Weather</button>
+
+            </div>
+        </div>
+        
+        <div class="row"> 
+            <div class="col">
+                <br><br><br><br>
+            <h1 class ="display-6">Previously Searched Cities:</h1>
+            <p>These city names are pulled from the database using an api call to retrieve the json data, any city entered is also stored in the database using a post call. If a city is already in the database, it wont be added</p>
+            <h3 class="text-center" *ngFor="let c of listofcities">{{c}}</h3>
+
+            <br><br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
